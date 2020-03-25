@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.6.5'
 
+gem 'service_actor'
 gem 'service_actor-rails'
 
 gem 'bootsnap', require: false
