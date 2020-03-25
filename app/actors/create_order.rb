@@ -10,8 +10,12 @@ class CreateOrder < Actor
     order.user = user
     order.status = "Order Created"
     order.delivery_fee = 2.0
-    # fail!(error: 'Invalid Order') unless order.valid?
+    fail!(error: 'Invalid Order') unless order.valid?
 
     order.save
+  end
+
+  def rollback
+    order.destroy
   end
 end
