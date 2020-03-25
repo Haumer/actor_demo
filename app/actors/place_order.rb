@@ -1,3 +1,5 @@
 class PlaceOrder < Actor
-  play(CreateOrder, CalculatePrice, GreetUser)
+  play(CreateOrder)
+  play CalculatePrice, if: ->(result) {result.success?}
+  play(GreetUser)
 end

@@ -8,8 +8,4 @@ class CalculatePrice < Actor
   def call
     self.price = meal.price + order.delivery_fee
   end
-
-  def rollback
-
-  end
 end
