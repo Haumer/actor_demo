@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
   def create
-    result = PlaceOrder.call(order: Order.new, meal: Meal.first, user: User.first)
-
+    result = PlaceOrder.result(user: User.first, meal: Meal.first, order: Order.new)
     if result.success?
       redirect_to result.order
     else
